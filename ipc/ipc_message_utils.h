@@ -49,9 +49,8 @@
 // code to figure out the message class from its ID.
 enum IPCMessageStart {
   AutomationMsgStart = 0,
-  PushServiceMsgStart,
   CmcStrRegistryManagerStart,
-  LastIPCMsgStart      // Must come last.
+  LastIPCMsgStart
 };
 
 class FilePath;

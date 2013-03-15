@@ -1,9 +1,9 @@
 Name:       chromium
 Summary:    chromium library
 Version:    1.0
-Release:    2
+Release:    1
 Group:      TO_BE/FILLED_IN
-License:    TO BE FILLED IN
+License:    BSD
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  cmake
 
@@ -24,9 +24,9 @@ chromium library (devel)
 %build
 MAJORVER=`echo %{version} | awk 'BEGIN {FS="."}{print $1}'`
 %ifarch %{ix86}
-CXXFLAGS="$CXXFLAGS -D_OSP_DEBUG_ -D_OSP_X86_ -D_OSP_EMUL_" cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DFULLVER=%{version} -DMAJORVER=${MAJORVER}
+CXXFLAGS="$CXXFLAGS -D_OSP_DEBUG_ -D_OSP_X86_ -D_OSP_EMUL_" %cmake .  -DFULLVER=%{version} -DMAJORVER=${MAJORVER}
 %else
-CXXFLAGS="$CXXFLAGS -D_OSP_DEBUG_ -D_OSP_ARMEL_" cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DFULLVER=%{version} -DMAJORVER=${MAJORVER}
+CXXFLAGS="$CXXFLAGS -D_OSP_DEBUG_ -D_OSP_ARMEL_" %cmake .  -DFULLVER=%{version} -DMAJORVER=${MAJORVER}
 %endif
 # Call make instruction with smp support
 make %{?jobs:-j%jobs}
