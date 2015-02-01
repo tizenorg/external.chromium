@@ -2,7 +2,6 @@ Name:       chromium
 Summary:    chromium library
 Version:    1.0
 Release:    1
-VCS:        external/chromium#submit/master/20130204.054301-1-gf46f96e2520bef5f41566b1752fa700ecbb2e164
 Group:      TO_BE/FILLED_IN
 License:    BSD
 Source0:    %{name}-%{version}.tar.gz
